@@ -73,3 +73,8 @@ class Calculator {
 // 		return this.value;
 // 	}
 // }
+
+// power(value) {
+//     this.value =  Math.pow(this.value, value);
+//     return this;
+// }
