@@ -1,14 +1,24 @@
 var join = function (arr1, arr2) {
-	const arr1_ids = arr1.map((item) => item.id);
-	const arr2_ids = arr2.map((item) => item.id);
-	return [
-		...arr1.filter((item) => !arr2_ids.includes(item.id)),
-		...arr2.map((item) =>
-			arr1_ids.includes(item.id)
-				? { ...arr1.find((find_item) => item.id === find_item.id), ...item }
-				: item
-		),
-	];
+	const map = {};
+	[...arr1, ...arr2].forEach((item) => {
+		map[e.id] = { ...map[e.id], ...item };
+	});
+	return [...Object.values(map)];
+};
+
+var join = function (arr1, arr2) {
+	const result = {};
+	for (let i = 0; i < arr1.length; i++) {
+		result[arr1[i].id] = arr1[i];
+	}
+	for (let i = 0; i < arr2.length; i++) {
+		if (result[arr2[i].id]) {
+			for (const key in arr2[i]) result[arr2[i].id][key] = arr2[i][key];
+		} else {
+			result[arr2[i].id] = arr2[i];
+		}
+	}
+	return Object.values(result);
 };
 
 arr1 = [{ id: 1, b: { b: 94 }, v: [4, 3], y: 48 }];
