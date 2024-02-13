@@ -13,3 +13,7 @@ const gen = fibGenerator();
 console.log(gen.next().value);
 console.log(gen.next().value);
 console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
