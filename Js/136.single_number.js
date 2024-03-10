@@ -9,5 +9,13 @@ var singleNumber = function (nums) {
 	}
 };
 
+// var singleNumber = function singleNumber(nums) {
+// 	let num = 0;
+// 	for (let n of nums) {
+// 		num ^= n;
+// 	}
+// 	return num;
+// };
+
 console.log(singleNumber([2, 2, 1]));
 console.log(singleNumber([1]));
