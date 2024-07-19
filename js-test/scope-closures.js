@@ -60,16 +60,36 @@
 
 // q4
 
-function createCounter(initialCount) {
-	let count = initialCount;
-	return function () {
-		'use strict';
-		count += 1;
-		return count;
-	};
-}
+// function createCounter(initialCount) {
+// 	let count = initialCount;
+// 	return function () {
+// 		'use strict';
+// 		count += 1;
+// 		return count;
+// 	};
+// }
 
-const counter = createCounter(10);
-counter();
-counter();
-console.log(counter());
+// const counter = createCounter(10);
+// counter();
+// counter();
+// console.log(counter());
+
+// q5
+
+// const input = prompt('What fruit do you like?');
+// let css = 'color: #ffffff';
+
+// switch (input) {
+// 	case 'orange': {
+// 		const css = 'color: #ffa500';
+// 		console.log('%cOrange!', css);
+// 		break;
+// 	}
+// 	case 'lemon': {
+// 		const css = 'color: #ffff00';
+// 		console.log('%cLemon!', css);
+// 		break;
+// 	}
+// 	case 'orange':
+// 		console.log('No color for you');
+// }
