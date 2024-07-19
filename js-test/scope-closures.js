@@ -26,17 +26,34 @@
 // console.log(counterSec());
 
 // q2
-function createCounter() {
-	let globalCount = 0;
-	function incrementCount() {
-		let incrementedValue = ++globalCount;
-		return incrementedValue;
-	}
+// function createCounter() {
+// 	let globalCount = 0;
+// 	function incrementCount() {
+// 		let incrementedValue = ++globalCount;
+// 		return incrementedValue;
+// 	}
 
-	return { incrementCount };
+// 	return { incrementCount };
+// }
+
+// const counter = createCounter();
+// console.log(counter.incrementCount());
+// console.log(counter.incrementCount());
+// console.log(createCounter().incrementCount());
+
+// q3
+
+function createUserManager() {
+	let user = null;
+	return function (name) {
+		'use strict';
+		user = { name, createdAt: Date.now() };
+		return user;
+	};
 }
 
-const counter = createCounter();
-console.log(counter.incrementCount());
-console.log(counter.incrementCount());
-console.log(createCounter().incrementCount());
+const createUser = createUserManager();
+console.log(createUser === createUser);
+console.log(createUser('Taiyeba'));
+console.log(createUser('Taiyeba') == createUser('Taiyeba'));
+console.log(createUser('Taiyeba') === createUser('Taiyeba'));
