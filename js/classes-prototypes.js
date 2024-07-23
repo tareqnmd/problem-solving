@@ -58,7 +58,7 @@ class Chameleon {
 
 const freddie = new Chameleon('green');
 // freddie.changeColor('orange');
-// console.log('freddie', freddie); 
+// console.log('freddie', freddie);
 //type error
 
 // q4
@@ -67,7 +67,9 @@ class User {
 	constructor(userName) {
 		this.userName = userName;
 	}
-	login() {}
+	login() {
+		console.log('logged');
+	}
 }
 
 const user = new User('Taiyeba');
@@ -76,3 +78,9 @@ console.log(Object.getPrototypeOf(user) === User.prototype);
 console.log(Object.getPrototypeOf(user) === Object.getPrototypeOf(User));
 console.log(user.prototype === User.prototype);
 console.log(Object.getPrototypeOf(user) === User.constructor);
+
+console.log(user, User);
+console.log(Object.getPrototypeOf(user), User.prototype);
+console.log(Object.getPrototypeOf(user), Object.getPrototypeOf(User));
+console.log(user.prototype, user.__proto__, User.prototype);
+console.log(Object.getPrototypeOf(user), User.constructor);
