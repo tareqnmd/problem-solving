@@ -133,3 +133,103 @@ const config = {
 
 config.language = 'Dutch';
 console.log(config.language);
+
+// q10
+
+const team = {
+	members: [
+		{
+			info: {
+				street: undefined,
+				city: 'Boston',
+			},
+		},
+		{
+			info: {
+				street: '',
+				city: 'Boston',
+			},
+		},
+		{
+			info: {
+				street: null,
+				city: 'Boston',
+			},
+		},
+		null,
+	],
+};
+
+const getInfo = (mem) => {
+	const info = mem?.info;
+	return (info?.street ?? info?.city) || 'Unknown';
+};
+
+const result = team.members.map(getInfo);
+console.log(result);
+
+// q11
+// console.log(new Array(-1));
+// console.log(25.toString());
+// console.log([].reduce((acc, it) => acc + it));
+// const { a22: b22 = c22 } = { a22: undefined, c22: 12 };
+// console.log(b22);
+// const a11 = { b: 1 };
+// console.log((a11 ?? 1) || b);
+
+// q12
+console.log(new Date().toDateString());
+console.log(new Date().toISOString());
+console.log(new Date().toLocaleDateString());
+console.log(new Date().toUTCString());
+console.log(new Date().toString());
+
+// q13
+const {
+	ax = 'default',
+	bx = 'default',
+	cx = 'default',
+	dx = 'default',
+} = {
+	ax: null,
+	bx: undefined,
+	cx: false,
+	dx: 0,
+};
+
+console.log(ax, bx, cx, dx);
+
+// q14
+
+const symbolOne = Symbol.for('key');
+const symbolTwo = Symbol('key');
+const symbolThree = Symbol.for('key');
+
+console.log(symbolOne === symbolTwo);
+console.log(symbolThree === symbolTwo);
+console.log(symbolOne === symbolThree);
+console.log(symbolThree === Symbol('key'));
+console.log(symbolTwo === Symbol('key'));
+
+// q15
+
+function compareUsers(user1, user2 = user) {
+	return user1 === user2;
+}
+
+const user = { name: 'Tareq' };
+const cu1 = compareUsers(user, { ...user });
+const cu2 = compareUsers(user);
+const cu3 = compareUsers({ name: 'Tareq' }, { name: 'Tareq' });
+
+console.log(cu1, cu2, cu3);
+
+// q16
+
+function thankyouTag(str, greet) {
+	console.log(str, greet);
+}
+
+const greet = 'hiiiiiiiiiiiiiiiiiii!!';
+
+thankyouTag`ggggggggggggg ${greet} 980890`;
