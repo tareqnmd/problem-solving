@@ -1,12 +1,12 @@
 const makeCounter = (initialNumber = 0) => {
 	const increment = () => {
-		console.log(initialNumber++);
+		return initialNumber++;
 	};
 	return increment;
 };
 
 const counter = makeCounter();
 
-counter();
-counter();
-counter();
+console.log(counter());
+console.log(counter());
+console.log(counter());
